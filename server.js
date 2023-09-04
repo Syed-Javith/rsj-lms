@@ -45,6 +45,12 @@ app.use(passport.session());
 
 // console.log(Book);
 mongoose.set('strictQuery', true);
+// Increase the timeout to 20 seconds (default is 10 seconds)
+mongoose.set('findOneAndModify', false); // Disable findOneAndUpdate and findOneAndDelete options
+mongoose.set('findOneAndModify', false); // Disable findOneAndUpdate and findOneAndDelete options
+mongoose.set('findOneAndRemove', false); // Disable findOneAndRemove option
+mongoose.set('bufferTimeoutMS', 20000); // Set the buffer timeout to 20 seconds
+
 mongoose.connect(MONGO_URL,{
   useNewUrlParser : true , 
   useUnifiedTopology:true
@@ -157,7 +163,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
   clientID: process.env.CLIENT_ID_FB,
   clientSecret: process.env.CLIENT_SECRET_FB,
-  callbackURL: "http://localhost:3000/auth/facebook/secrets"
+  callbackURL: "https://rsjlmsnode.onrender.com/auth/facebook/secrets"
 },
 function(accessToken, refreshToken, profile, cb) {
   
