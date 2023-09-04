@@ -45,10 +45,10 @@ app.use(passport.session());
 
 // console.log(Book);
 mongoose.set('strictQuery', true);
-// Increase the timeout to 20 seconds (default is 10 seconds)
-mongoose.set('findOneAndModify', false); // Disable findOneAndUpdate and findOneAndDelete options
-mongoose.set('findOneAndModify', false); // Disable findOneAndUpdate and findOneAndDelete options
-mongoose.set('findOneAndRemove', false); // Disable findOneAndRemove option
+// // Increase the timeout to 20 seconds (default is 10 seconds)
+// mongoose.set('findOneAndModify', false); // Disable findOneAndUpdate and findOneAndDelete options
+// mongoose.set('findOneAndModify', false); // Disable findOneAndUpdate and findOneAndDelete options
+// mongoose.set('findOneAndRemove', false); // Disable findOneAndRemove option
 mongoose.set('bufferTimeoutMS', 20000); // Set the buffer timeout to 20 seconds
 
 mongoose.connect(MONGO_URL,{
