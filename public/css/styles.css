@@ -1,0 +1,58 @@
+.home-img{
+    margin-left: 50px;
+    width: 25%;
+}
+
+.login-card{
+    font-size: 1.5rem;
+}
+
+.rsj{
+    width: 100%;
+    height: 360px;
+
+}
+
+body{
+    background-image: url('https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg?cs=srgb&dl=pexels-ivo-rainha-1290141.jpg&fm=jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+}
+
+.main-page{
+    margin: 50px auto;
+    background-color: #FBFFB1;
+    height: 30%;
+    width: 50%;
+}
+
+.logout{
+    position: fixed;
+}
+
+.home-page{
+    
+    background-color: pink;
+}
+
+.search{
+     background-color: #FBFFB1;
+     width: 75%;
+     margin: 50px auto;
+     padding: 25px 20px;
+}
+
+.secrets{
+    margin-right: 15px;
+}
+
+.error{
+    color: white;
+}
+
+.error-container{
+    top:125px;
+    position: relative;
+    background-color: black;
+}

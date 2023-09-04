@@ -1,0 +1,44 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="card-body my-5" style="background-color: black;">
+<h5 style="color: white;" >Try searching <a href="/book" class="btn btn-danger">Search</a></h5>
+<h3 class="error" style="text-align: center; background-color: black;">Welcome <%= cartDetails[0].displayname %></h3>
+</div>
+
+
+<% if(cartDetails[0].Books.userBookTitles.length === 0 ){ %>
+  
+  <div class="card mx-auto" style="width: 18rem;">
+    
+    <div class="card-body mx-auto">
+      <h4 >No Book Found !</h4>
+      <h5 >Try searching <a href="/book" class="btn btn-danger">Search</a></h5>
+    </div>
+  
+  </div>
+  <% }%>
+
+    <div class="container">
+        <div class="row">
+          <% for(var i = 0 ; i < cartDetails[0].Books.userBookTitles.length ; i++ ) { %>
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="http://books.google.com/books/content?id=<%= cartDetails[0].Books.userBookIds[i]%>&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api" alt="Card image cap"> 
+                    <div class="card-body">
+                      <h4><%= cartDetails[0].Books.userBookTitles[i] %></h4>
+                      <h4><%= cartDetails[0].Books.userBookAuthors[i] %></h4>
+                    </div>
+                  <form action="/remove" method="post">
+                    <input type="hidden" name="removedBookId" value="<%=cartDetails[0].Books.userBookIds[i]%>">
+                    <input type="hidden" name="removedBookTitle" value="<%=cartDetails[0].Books.userBookTitles[i]%>">
+                    <input type="hidden" name="removedBookAuthor" value="<%=cartDetails[0].Books.userBookAuthors[i]%>">
+                    <button class="btn btn-primary" type="submit">remove</button>
+                  </form>
+                </div>
+            </div> 
+            <% } %>
+        </div>
+    </div>
+<% console.log(cartDetails); %>
+
+<%- include('./partials/footer.ejs') %>

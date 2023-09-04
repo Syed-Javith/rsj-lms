@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="jumbotron centered">
+    
+    <h1 class="display-3">E Book Site</h1>
+    <p class="secret-text">Do Search your book here...</p>
+
+    <form action="/submit" method="POST">
+
+      <div class="form-group">
+        <input type="text" class="form-control text-center" name="secret" placeholder="What's your secret?">
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+<%- include('partials/footer') %>

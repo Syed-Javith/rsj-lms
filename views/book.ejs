@@ -1,0 +1,33 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="search">
+    <div class="container my-5">
+        <!-- <img src="https://media.istockphoto.com/id/910852368/photo/student-searching-books.jpg?s=170667a&w=0&k=20&c=f5uqtZs8fnzMsndJAMd9SUT_RVpor2AuAxxKdjacMKs=" alt=""> -->
+        <div class="row my-5">
+            <div class="col">
+                <form action="/book" method="POST" >
+                    <input type="text" name="book" placeholder="search by book...">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="col">
+                <form action="/author" method="POST" >
+                    <input type="text" name="author" placeholder="search by author...">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="search">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit et, natus iure quae sunt quos perspiciatis reprehenderit consequatur eveniet qui possimus? Neque dolore, animi inventore aliquam corrupti modi distinctio voluptatem?
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

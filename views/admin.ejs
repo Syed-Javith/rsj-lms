@@ -1,0 +1,23 @@
+<%- include("./partials/header.ejs") %>
+
+<h3 class="mx-auto" style="color: white;">Welcome Admin</h3>
+    <div class="container">
+        <div class="row">
+            <% for( var i = 0 ; i < queryList.length ; i++ ){ %>
+            <div class="col-lg-4">
+                <div class="card my-3" style="width: 18rem;">
+                    <div class="card-header">
+                        <h5 class="card-title">User <%= i+1 %></h5> 
+                    </div>
+                    <div style="align-items: center;" class="card-body">
+                      <h5 class="card-title">Name : <%= queryList[i].name %></h5>
+                      <h5 class="card-title">Mail ID : <%= queryList[i].username %></h5>
+                      <h5 class="card-title">Arrived at : <%= queryList[i].time %></h5>
+                      <p class="card-text">Message : <%= queryList[i].message %>.</p>
+                    </div>
+                    <a href="mailto:<%=queryList[i].username%>" class="mx-auto"><button class="btn btn-primary">Mail User</button></a> 
+                  </div>
+            </div>
+            <% } %>
+        </div>
+    </div>

@@ -1,0 +1,31 @@
+<%- include("./partials/header.ejs") %>
+
+
+    <div class="container">
+      
+        <div class="row">
+          <% for(var i = 0 ; i < 39 ; i++ ) { %>
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="http://books.google.com/books/content?id=<%= renderedBooks.items[i].id%>&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api" alt="Card image cap"> 
+                    <div class="card-body">
+                      <h5 class="card-title"><%= renderedBooks.items[i].volumeInfo.title %></h5>
+                      <h5 class="card-title"><%= renderedBooks.items[i].volumeInfo.publisher %></h5>
+                      <h5 class="card-title"><%= authors[i] %></h5>
+                      <!-- <p class="card-text"><%= renderedBooks.items[i].volumeInfo.description %></p> -->
+                      <form action="/cart/<%=currentUser%>" method="post">
+                        <input type="hidden" name="addedBookId" value="<%= renderedBooks.items[i].id %>">
+                        <input type="hidden" name="addedBookTitle" value="<%= renderedBooks.items[i].volumeInfo.title %>">
+                        <input type="hidden" name="addedBookAuthor" value="<%= authors[i] %>">
+                        <button class="btn btn-primary" type="submit">Add To Cart</button>
+                      </form>
+                    </div>
+                  </div>
+            </div>
+        <% } %>
+        </div>
+    
+    </div>
+
+
+<%- include("./partials/footer.ejs") %>
